@@ -24,6 +24,7 @@ public class NotificationService {
     private final NotificationTaskRepository repository;
     private final TelegramBot telegramBot;
 
+
     public NotificationService(NotificationTaskRepository repository, TelegramBot telegramBot) {
         this.repository = repository;
         this.telegramBot = telegramBot;

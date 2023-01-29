@@ -3,8 +3,8 @@
 -- changeset nS:1
 CREATE TABLE notification_task
 (
-    id SERIAL,
-    notificationText TEXT,
-    chatId BIGINT,
-    dateTime TIMESTAMP
+    id                     SERIAL,
+    notification_text      TEXT,
+    chat_id                BIGINT,
+    notification_date_time TIMESTAMP
 )

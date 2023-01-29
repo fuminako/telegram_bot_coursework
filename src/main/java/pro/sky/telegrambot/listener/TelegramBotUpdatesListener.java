@@ -48,9 +48,11 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         Long chatId = update.message().chat().id();
         if (userMessage.equals("/start")) {
             telegramBot.execute(new SendMessage(chatId, "Приветсвую в моем боте! Для внесения задачи введите её в формате '01.01.2023 12:10 Сходить за покупками'"));
+            logger.info("Response received /start");
         } else {
             if (this.notificationService.processNotification(chatId, userMessage)) {
                 this.telegramBot.execute(new SendMessage(chatId, "Задача создана!"));
+                logger.info("Response received: 'Задача создана!'");
             } else {
                 this.telegramBot.execute(new SendMessage(chatId, "Формат для внесения задачи: '01.01.2023 12:10 Сходить за покупками'"));
             }
